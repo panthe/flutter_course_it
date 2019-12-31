@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "813044474348",
+    "firebase_url": "https://fluttercourseit.firebaseio.com",
+    "project_id": "fluttercourseit",
+    "storage_bucket": "fluttercourseit.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:813044474348:android:279bf58be6559839b5e0c9",
+        "android_client_info": {
+          "package_name": "it.itasoft.flutter_course_it"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "813044474348-kcq7mpppvsnqqa3nbuon8l3pi1mqhluo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBMiGHNRqsP6ofZl3WaM10obwUBCFApMTo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "813044474348-kcq7mpppvsnqqa3nbuon8l3pi1mqhluo.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "813044474348-0vic49dl9evjnghhvbf3l5rc0btr04d4.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "it.itasoft.flutterCourseIt"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,12 @@
+{
+  "app_title": "Flutter Course",
+
+  "undo": "Undo",
+  "confirm": "Confirm",
+
+  "message_mail_to_validate_signUpWithEmailPassword": "An email has been sent to the address indicated during registration.\nConfirm the email to validate the account!",
+  "message_mail_to_validate_logInWithEmailPassword": "Attention the e-mail address associated with the user has not yet been validated!\nAn email will be sent again to USER_EMAIL.\nCheck the junk mail (SPAM) for security if you are unable to receive it! ",
+  "message_mail_to_validate_on_checkLogIn": "The email associated with the account has not yet been confirmed.\nConfirm the email to validate the account!",
+  "message_mail_to_validate_on_forgotPassword": "An email with the link to reset the password was sent to the address indicated during registration.",
+  "message_generic_error_auth": "Authentication Error"
+}

@@ -1,0 +1,12 @@
+{
+  "app_title": "Corso Flutter",
+
+  "undo": "Annulla",
+  "confirm": "Conferma",
+
+  "message_mail_to_validate_signUpWithEmailPassword": "Un'email è stata inviata all'indirizzo indicato in fase di registrazione.\nConfermare l'email per convalidare l'account!",
+  "message_mail_to_validate_logInWithEmailPassword": "Attenzione la mail associata all'utente non è stata ancora convalidata!\nVerrà inviata nuovamente una email all'indirizzo USER_EMAIL.\nControllare la posta indesiderata (SPAM) per sicurezza qualora non si riesca a riceverla!",
+  "message_mail_to_validate_on_checkLogIn": "L'email associata all'account non è stata ancora confermata.\nConfermare l'email per convalidare l'account!",
+  "message_mail_to_validate_on_forgotPassword": "Un'email con il link per reimpostare la password è stata inviata all'indirizzo indicato in fase di registrazione.",
+  "message_generic_error_auth": "Errore di autenticazione"
+}
