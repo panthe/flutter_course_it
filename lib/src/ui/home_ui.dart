@@ -24,6 +24,7 @@ class _HomeUIState extends State<HomeUI> {
 
   @override
   void initState() {
+    super.initState();
     _scrollController = ScrollController(
       initialScrollOffset: 0.0,
       keepScrollOffset: true,

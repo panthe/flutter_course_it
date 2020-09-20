@@ -20,7 +20,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       onGenerateTitle: (BuildContext context) => Localization.of(context).trans("app_title"),
       theme: appTheme,
-
       supportedLocales: [
         const Locale('en', 'US'),
         const Locale('it', 'IT')
@@ -49,11 +48,49 @@ class MyApp extends StatelessWidget {
         );
       },
       initialRoute: SplashRoute,
+      /*
+      if active onGenerateRoute doesn't work for the listed routes
+      */
       routes: {
         SplashRoute: (context) => SplashScreenUI(),
         HomeRoute: (context) => HomeUI(),
         AnimatedCollectionRoute: (context) => AnimatedCollectionUI(),
       },
+
+      /*
+      onGenerateRoute: (settings) {
+        Route page;
+        print('Settings name ${settings.name}');
+        print('SplashRoute $SplashRoute');
+        print('HomeRoute $HomeRoute');
+        print('AnimatedCollectionRoute $AnimatedCollectionRoute');
+        switch(settings.name) {
+          case SplashRoute:
+            return _animatePageTransition(SplashScreenUI);
+            break;
+
+          case AnimatedCollectionRoute:
+            return _animatePageTransition(AnimatedCollectionUI);
+            break;
+        }
+
+        // Unknow Route
+        print('Unknow Route');
+        return MaterialPageRoute(builder: (context) => HomeUI());
+      },
+       */
     );
   }
+
+  /*
+  _animatePageTransition(dynamic page) {
+
+    return PageRouteBuilder(
+      pageBuilder: (_, __, ___) => page(),
+      transitionsBuilder: (_, animation1, __, child) {
+        return FadeTransition(opacity: animation1, child: child);
+      },
+    );
+  }
+   */
 }

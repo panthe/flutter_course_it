@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 
 class BoxFadeAndSlide extends StatefulWidget{
   final bool runAnimation;
+  final Function callback;
 
-  BoxFadeAndSlide({this.runAnimation = false});
+  BoxFadeAndSlide({Key key, this.runAnimation = false, this.callback}): super(key: key);
 
   @override
   _BoxFadeAndSlideState createState() => _BoxFadeAndSlideState();
@@ -14,17 +15,20 @@ class _BoxFadeAndSlideState extends State<BoxFadeAndSlide> with SingleTickerProv
   Animation _fadeAnimation;
   Animation _slideAnimation;
   IconData _icon;
+
   @override
   void initState() {
     super.initState();
     _icon = Icons.forward;
-    _initAnimationsController();
+    _initAnimationController();
     _initAnimation();
   }
 
 
   @override
   void didUpdateWidget(BoxFadeAndSlide oldWidget) {
+    print('didUpdateWidget BoxFadeAndSlide');
+    super.didUpdateWidget(oldWidget);
     if (widget.runAnimation) {
       _animationController.forward();
     }
@@ -63,7 +67,7 @@ class _BoxFadeAndSlideState extends State<BoxFadeAndSlide> with SingleTickerProv
     );
   }
 
-  _initAnimationsController() {
+  _initAnimationController() {
     _animationController = AnimationController(
         duration: Duration(seconds: 5),
         vsync: this
@@ -71,6 +75,8 @@ class _BoxFadeAndSlideState extends State<BoxFadeAndSlide> with SingleTickerProv
     ..addStatusListener((status) {
       if (status == AnimationStatus.completed) {
         print("Animation Completed");
+        widget.callback();
+        _animationController.reset();
       }
     });
   }
@@ -87,7 +93,7 @@ class _BoxFadeAndSlideState extends State<BoxFadeAndSlide> with SingleTickerProv
     ).animate(CurvedAnimation(
         parent: _animationController,
         curve: Curves.elasticInOut
-    )
+      )
     );
   }
 }

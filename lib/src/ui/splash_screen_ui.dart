@@ -13,7 +13,7 @@ class _SplashScreenUIState extends State<SplashScreenUI> with SingleTickerProvid
   void initState() {
     super.initState();
     _animationController = AnimationController(
-      duration: Duration(seconds: 3),
+      duration: Duration(seconds: 5),
       vsync: this
     )
     ..forward()
@@ -56,22 +56,30 @@ class _SplashScreenUIState extends State<SplashScreenUI> with SingleTickerProvid
               ),
             ),
             child: Center(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      seconds == null ? "" : seconds,
-                      style: TextStyle(
-                        fontSize: 32.0,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black
-                      ),
+              child: Stack(
+                overflow: Overflow.visible,
+                children: <Widget>[
+                  // Stroked text as border.
+                  Text(
+                    seconds == null ? "" : seconds,
+                    style: TextStyle(
+                      fontSize: 68,
+                      foreground: Paint()
+                        ..style = PaintingStyle.stroke
+                        ..strokeWidth = 6
+                        ..color = Colors.black,
                     ),
-                    SizedBox(height: 25.0),
-                    CircularProgressIndicator()
-                  ],
-                )
+                  ),
+                  // Solid text as fill.
+                  Text(
+                    seconds == null ? "" : seconds,
+                    style: TextStyle(
+                      fontSize: 68,
+                      color: Colors.yellow,
+                    ),
+                  ),
+                ],
+              ),
             )
         );
       }
