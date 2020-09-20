@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -16,7 +15,8 @@ class Localization {
   Map<String, String> _sentences;
 
   Future<bool> load() async {
-    String data = await rootBundle.loadString('assets/lang/${this.locale.languageCode}.json');
+    String data = await rootBundle
+        .loadString('assets/lang/${this.locale.languageCode}.json');
     Map<String, dynamic> _result = json.decode(data);
 
     this._sentences = new Map();
